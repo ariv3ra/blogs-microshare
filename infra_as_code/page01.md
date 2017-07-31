@@ -137,7 +137,7 @@ sudo yum -y update
 ```
 
 ## Final Touches main.tf
-You should now have three files in your Terraform project folder:
+You should now have four files in your Terraform project folder:
 
 - main.tf
 - terraform.tf
