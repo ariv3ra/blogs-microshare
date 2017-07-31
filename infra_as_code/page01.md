@@ -7,7 +7,7 @@ In this blog I'm going to share some of my experiences with IaC using [Terraform
 
 Let's started.
 
-**Note:** The following examples are build using Linux & OSX platforms
+**Note:** The following examples are built using Linux & OSX platforms
 
 ### Prerequisites
 
@@ -225,7 +225,7 @@ $ terraform apply
 You will see terraform building out the resources defined in your project into AWS.  Log into the AWS Web Console > EC2 section & you will now see a new EC2 instance initializing named terraform01 in the list.
 
 ### Terraform Destroy
-Now that we have a running EC2 instance running based on our terraform project you have the ability to destroy these resources when with the destroy command:
+Now that we have a running EC2 instance running based on our terraform project you have the ability to destroy these resources with the destroy command:
 
 ```bash
 $ terraform destroy
@@ -236,5 +236,5 @@ The destroy command will permanently destroy **ALL** of the AWS objects created 
 ## Conclusion
 This blog is designed to give you a top level view of terraform on how to use it using a simple example.  Terraform is a very powerful tool and I highly recommend tech personnel such as OPs, DevOPS, developers etc... get familiar with Terraform and it's capabilities because from what I've seen Infrastructure as Code is slowly becoming the defacto infrastructure management strategy adopted by organizations.
 
-Stay tuned for followup blogs where I'll expand on this blog & show how to build out more complex terraform projects on AWS.
+Stay tuned for followup blogs where I'll expand on this blog & show you how to build out more robust terraform projects.
 
