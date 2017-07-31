@@ -3,7 +3,7 @@ Infrastructure as Code (IaC) Terraforming
 
 Recently I've been adopting and implementing an Infrastructure as Code (IaC) philosophy in our shop.  IaC provides ops teams the ability to design, provision, deploy and manage their infrastructures by simply writing code using descriptive or high level languages.  This code can execute tasks such as automatic asset provisioning, app deployment and more importantly configuration management.  
 
-In this blog I'm going to share some of my experiences with IaC using [Terraform](https://www.terraform.io). This blog will cover intermediate usage of terraform though begginers will be able to follow along nicely.
+In this blog I'm going to share some of my experiences with IaC using [Terraform](https://www.terraform.io). This blog will cover intermediate usage of terraform though beginners will be able to follow along nicely.
 
 Let's started.
 
@@ -22,7 +22,7 @@ Before we begin you're going to need the have the following ready to go:
 
 ### AWS EC2 Roles
 
-AWS Roles & Policies enable you to define and assign privileges to AWS assets such as EC2 Instances so that they have permission to function across other AWS services. For example you can create a role that allows EC2 instances to red/write files to AWS S3.
+AWS Roles & Policies enable you to define and assign privileges to AWS assets such as EC2 Instances so that they have permission to function across other AWS services. For example you can create a role that allows EC2 instances to read/write files to AWS S3.
 
 ## Terraform
 
@@ -38,7 +38,7 @@ Terraform operates within directories and interacts with the terraform related f
 
 ```bash
 $ mkdir terraform01
-$ cd terrform01
+$ cd terraform01
 ```
 
 Now that we're in the terraform01 directory we can create a new Terraform file named `terraform.tf` and open it in your favorite text editor then add these lines of code to it:
@@ -66,11 +66,11 @@ variable "aws_secret_key" {
 
 The `terraform.tf` file contains the AWS creds needed to execute tasks on the AWS platform. This file also specifies where your projects state is stored on S3.  Storing the file on S3 provide a safe backup location and also serves as a centralized location for sharing this state file amongst teams.
 
-## Intialize Terraform Project
-Now that we've crated the `terraform.tf` we can intialize our terraform project which basically sets the project environment & creates the state file in the location mentioned in the `key` parameter above.  You should see a message that reads `Terraform has been successfully initialized!`
+## Initialize Terraform Project
+Now that we've created the `terraform.tf` we can initialize our terraform project which basically sets the project environment & creates the state file in the location mentioned in the `key` parameter above.  You should see a message that reads `Terraform has been successfully initialized!`
 
 ## Terraform main.tf file
-We have all the elements in place to start building out our terraform project so lets create a new file named `main.tf` and we will start populating with our project code.
+We have all the elements in place to start building out our terraform project so let's create a new file named `main.tf` and we will start populating with our project code.
 
 ```bash
 $ touch maint.tf
@@ -196,10 +196,10 @@ variable "instance_type"{
 
 ## Terraform Validate, Plan and Apply
 
-We now have all the key elements in place to create a new AWS EC2 instance using the Terraform application. Run these commands in a terminal (make sure you change directoty into the project folder):
+We now have all the key elements in place to create a new AWS EC2 instance using the Terraform application. Run these commands in a terminal (make sure you change directory into the project folder):
 
 ```bash
-$ terrform validate
+$ terraform validate
 ```
 
 This validates your terraform project files to ensure they comply with terraform specs. I suggest you run this command after any changes to your project files.  If you receive any error messages correct them & continue validating until you receive a success message.
@@ -236,5 +236,4 @@ The destroy command will permanently destroy **ALL** of the AWS objects created 
 ## Conclusion
 This blog is designed to give you a top level view of terraform on how to use it using a simple example.  Terraform is a very powerful tool and I highly recommend tech personnel such as OPs, DevOPS, developers etc... get familiar with Terraform and it's capabilities because from what I've seen Infrastructure as Code is slowly becoming the defacto infrastructure management strategy adopted by organizations.
 
-Stay tuned for followup blogs where I'll expand on this blog & show you how to build out more robust terraform projects.
-
+Stay tuned for follow up blogs where I'll expand on this blog & show you how to build out more robust terraform projects.
